@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Seviye, Kelime
 
-# Register your models here.
+admin.site.register(Seviye)
+admin.site.register(Kelime)

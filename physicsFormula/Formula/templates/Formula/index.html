@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/interact.js' %}"></script>
+</head>
+<body class="body">
+  <div class="nav">
+    <h1 class="baslik">Fotografik Kelime Ezberleme</h1>
+  </div>
+  <div class="container w-container">
+    <div class="divim">
+
+      <div class="dropdown">
+  <ul>
+    <li>
+      <a class="togletext" href="#">{{"Konu Seçiniz"}} <img src="{% static 'sahneler/drop-down-arrow.png' %}"></a>
+          <ul>
+            <li>
+              <ul>
+                {% for album in seviyeler %}
+              <li><a class="togletext w-dropdown-link"  href="/Formula/{{ album.id }}/">{{ album.ad}}</a></li>
+              {% endfor %}
+
+              </ul>
+            </li>
+          </ul>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+</body>
+</html>

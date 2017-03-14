@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+
+        <style>
+        .holder {
+          position: static;
+          background: url("{% static 'sahneler/kirmizi-koltuk.jpg' %}") center/100% no-repeat;
+          margin: 87px 24px 152px 26px;
+          padding-right: 10px;
+          padding-bottom: 460px;
+          padding-left: 33px;
+        }
+        .dropzone {
+          background: url("{% static 'sahneler/iri.jpg' %}") center/100% no-repeat;
+          border-style: groove;
+          border-color: black;
+          width: 300px;
+          left: 15px;
+          top: 56px;
+          right: 0px;
+          bottom: 0px;
+          padding-top: 165px;
+          padding-bottom: 49px;
+          position: static;
+        }
+
+        .draggable {
+          float:left;
+          border:1px solid red;
+          padding:10px;
+          margin:10px;
+          border: 1px solid #000;
+          background-color: #f3eef5;
+          opacity: 1;
+          -webkit-perspective: 1554px;
+          perspective: 1554px;
+          -webkit-perspective-origin: 5000% 50%;
+          perspective-origin: 5000% 50%;
+          -webkit-transform: translate(0px, 0px);
+          -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+          -webkit-transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+          transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+          direction: ltr;
+          font-family: Tahoma, Verdana, Segoe, sans-serif;
+          color: #3a040f;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 800;
+          text-align: center;
+          text-transform: uppercase;
+          text-shadow: 0 -1px 0 #000;
+          cursor: pointer;
+        }
+
+        .drop-active {
+          border-color: #aaa;
+
+        }
+
+        .drop-target {
+          background-color: #000;
+          color: #FFF;
+          border-color: #fff;
+          border-style: solid;
+        }
+        .democlass {
+          float:left;
+          padding:10px;
+          margin:10px;
+          top: 50px;
+          font-family: Tahoma, Verdana, Segoe, sans-serif;
+          color: #0000FF;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 800;
+          text-align: center;
+          text-transform: uppercase;
+          text-shadow: 0 -1px 0 #000;
+             }
+        </style>
+</head>
+<body class="body">
+  <script type="text/javascript">
+
+  </script>
+  <div class="nav">
+    <h1 class="baslik">Fotografik Kelime Ezberleme</h1>
+  </div>
+
+        {% for kelime in meviye %}
+        {% if kelime.id == n %}
+        <div id="yes-drop" class="draggable">{{ kelime.anlami}}</div>
+        <div id="yes-drop" class="draggable">{{ kelime.kelime_adi}}</div>
+        {% endif %}
+        {% endfor %}
+
+        {% for seviye in meviye %}
+        {% if seviye.id == random_kelime %}
+        <div id="no-drop" class="draggable">{{ seviye.anlami}}</div>
+        <div id="no-drop" class="draggable">{{ seviye.kelime_adi}}</div>
+        {% endif %}
+        {% endfor %}
+          <div class="holder">
+              <div id="dropzone" class="dropzone"></div>
+    </div>
+
+    <script src="{% static 'js/interact.js' %}"></script>
+<script>
+interact('.draggable')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    restrict: {
+      restriction: "parent",
+      endOnly: true,
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    },
+    // enable autoScroll
+    autoScroll: true,
+    // call this function on every dragmove event
+    onmove: dragMoveListener,
+  });
+
+  function dragMoveListener (event) {
+    var target = event.target,
+        // keep the dragged position in the data-x/data-y attributes
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // translate the element
+    target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+  }
+
+// enable draggables to be dropped into this
+interact('.dropzone').dropzone({
+  // Require a 50% element overlap for a drop to be possible
+  overlap: 0.50,
+ accept: '#yes-drop',
+  // listen for drop related events:
+
+  ondropactivate: function (event) {
+    // add active dropzone feedback
+    event.target.classList.add('drop-active');
+  },
+  ondragenter: function (event) {
+    var draggableElement = event.relatedTarget,
+        dropzoneElement = event.target;
+
+    // feedback the possibility of a drop
+    dropzoneElement.classList.add('drop-target');
+  },
+  ondragleave: function (event) {
+    // remove the drop feedback style
+    event.target.classList.remove('drop-target');
+  },
+  ondrop: function (event) {
+    event.relatedTarget.setAttribute("class", "democlass");
+
+  },
+  ondropdeactivate: function (event) {
+    // remove active dropzone feedback
+    event.target.classList.remove('drop-active');
+    event.target.classList.remove('drop-target');
+  }
+});
+</script>
+
+  </body>
+</html>

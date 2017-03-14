@@ -1,0 +1,287 @@
+.body {
+  margin: auto;
+  background-color: #064444;
+  text-align: center;
+}
+
+.baslik {
+  margin-top: 4px;
+  padding-top: 0px;
+  padding-bottom: 42px;
+  -webkit-transition: opacity 600ms cubic-bezier(.55, .055, .675, .19);
+  transition: opacity 600ms cubic-bezier(.55, .055, .675, .19);
+  font-family: 'Open Sans', sans-serif;
+  color: #ecc6c6;
+  font-weight: 900;
+}
+
+.nav {
+  margin: 30px 28px auto 24px;
+  color: rgba(97, 182, 182, .49);
+}
+
+.ana-div {
+  margin: 1px 70px auto 75px;
+  padding-top: 0px;
+  padding-bottom: auto;
+  border: 1px solid #f3e8e8;
+}
+
+.img {
+  margin-top: 13px;
+  padding-bottom: 283px;
+  padding-left: 58px;
+}
+
+.container {
+  margin-top: auto;
+  margin-bottom: 69px;
+  padding-bottom: 0px;
+}
+
+.imgdiv {
+  margin: 0px 14px 0px 107px;
+  padding-top: 152px;
+  padding-bottom: 272px;
+}
+
+.divim {
+  margin: 87px 24px 152px 26px;
+  padding-right: 10px;
+  padding-bottom: 460px;
+  padding-left: 33px;
+}
+
+.aldiv {
+  position: relative;
+  margin: -109px 22px 0px 25px;
+  padding-top: 0px;
+  padding-bottom: 142px;
+}
+.kolon{
+  float:left;
+  border:1px solid red;
+  padding:10px;
+  margin:10px;
+  border: 1px solid #000;
+  background-color: #f3eef5;
+  opacity: 1;
+  -webkit-perspective: 1554px;
+  perspective: 1554px;
+  -webkit-perspective-origin: 5000% 50%;
+  perspective-origin: 5000% 50%;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  direction: ltr;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: #3a040f;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #000;
+  cursor: pointer;
+}
+.ufak {
+  float:left;
+  border:1px solid red;
+  padding:10px;
+  margin:10px;
+  border: 1px solid #000;
+  background-color: #f3eef5;
+  opacity: 1;
+  -webkit-perspective: 1554px;
+  perspective: 1554px;
+  -webkit-perspective-origin: 5000% 50%;
+  perspective-origin: 5000% 50%;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  direction: ltr;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: #3a040f;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #000;
+  cursor: pointer;
+}
+.nav-link {
+  display: block;
+  padding: 20px 0px;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: #cf404d;
+}
+
+.nav-link.w--current {
+  color: #cf404d;
+}
+.list {
+  margin-top: 55px;
+  margin-right: 44px;
+  margin-left: 136px;
+  padding-top: 71px;
+  padding-right: 60px;
+  background-color: transparent;
+  font-family: 'Droid Sans', sans-serif;
+  color: #d6bbbb;
+  list-style-type: none;
+}
+
+.list-item {
+  padding-left: 27px;
+  font-family: 'Droid Sans', sans-serif;
+  color: #d4b7b7;
+  font-size: 36px;
+  font-weight: 800;
+}
+.holder {
+  position: static;
+  background: url("{% static 'sahneler/kirmizi-koltuk.jpg' %}") center/100% no-repeat;
+  margin: 87px 24px 152px 26px;
+  padding-right: 10px;
+  padding-bottom: 460px;
+  padding-left: 33px;
+}
+.dropzone {
+  background: url("{% static 'sahneler/iri.jpg' %}") center/100% no-repeat;
+  border-style: groove;
+  border-color: black;
+  width: 300px;
+  left: 15px;
+  top: 56px;
+  right: 0px;
+  bottom: 0px;
+  padding-top: 165px;
+  padding-bottom: 49px;
+  position: static;
+}
+
+.draggable {
+  float:left;
+  border:1px solid red;
+  padding:10px;
+  margin:10px;
+  border: 1px solid #000;
+  background-color: #f3eef5;
+  opacity: 1;
+  -webkit-perspective: 1554px;
+  perspective: 1554px;
+  -webkit-perspective-origin: 5000% 50%;
+  perspective-origin: 5000% 50%;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
+  direction: ltr;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: #3a040f;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #000;
+  cursor: pointer;
+}
+
+.drop-active {
+  border-color: #aaa;
+
+}
+
+.drop-target {
+  background-color: #000;
+  color: #FFF;
+  border-color: #fff;
+  border-style: solid;
+}
+.democlass {
+  float:left;
+  padding:10px;
+  margin:10px;
+  top: 50px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: #0000FF;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #000;
+     }
+     .dropdown {
+       margin-left: auto;
+       padding-right: 100px;
+       padding-left: 100px;
+       border: 1px solid #c2a5a5;
+     }
+
+     .toggle {
+       padding-right: 80px;
+       padding-left: 80px;
+     }
+
+     .togletext {
+       margin-right: 11px;
+       padding: 20px 0px 20px 60px;
+       font-family: Tahoma, Verdana, Segoe, sans-serif;
+       color: #c3a3a3;
+       font-size: 50px;
+       font-weight: 800;
+     }
+
+     .icon {
+       color: #b69696;
+       font-size: 50px;
+     }
+     div.dropdown ul ul {
+       display: none;
+     }
+
+     div.dropdown li:hover > ul {
+       display: block;
+     }
+     :link:hover {
+ text-decoration:none;
+ margin-right: 11px;
+ padding: 20px 0px 20px 60px;
+ font-family: Tahoma, Verdana, Segoe, sans-serif;
+ color: #FF33CC;
+ font-size: 50px;
+ font-weight: 800;
+ }
+ a:hover {
+text-decoration:none;
+margin-right: 11px;
+padding: 20px 0px 20px 60px;
+font-family: Tahoma, Verdana, Segoe, sans-serif;
+color: 	#FF0080;
+font-size: 50px;
+font-weight: 800;
+}
+
+.foo:hover { background: gold; }
+@media (max-width: 479px) {
+  .ana-div {
+    margin-right: 1px;
+    margin-bottom: 19px;
+    margin-left: 18px;
+    padding-bottom: 396px;
+  }
+}
