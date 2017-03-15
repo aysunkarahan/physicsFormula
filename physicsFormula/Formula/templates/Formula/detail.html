@@ -7,9 +7,18 @@
     <script src={% static 'js/jquery-3.1.1.min.js' %}></script>
 </head>
 <body class="body">
+  <script>
+  //butona basıldıgında
+  $(document).ready(function() {
+   $('#vtn').click(function() {      //bacground resmini değiştir
+     $('.holder').css('background',  'url("../static/sahneler/iri.jpg") no-repeat scroll left top transparent');    //tekrar basıldığında
+   }, function() {
+     //backgroundunu eski resimle değiştir
+     $('.holder').css('background',  'url("../static/sahneler/kirmizi-koltuk.jpg") no-repeat scroll left top transparent');    }) }) </script>
   <div class="nav">
     <h1 class="baslik">Fotografik Kelime Ezberleme</h1>
     <a class="btn" type="button" href="/Formula/">Anasayfa</a>
+    <input id="vtn" class="btn" type="button" value="Sahneyi Kaldır"/>
     <input class="btn" type="button" value="Kelimeleri Yenile" onClick="window.location.reload(false)"/>
   </div>
   <p>Doğru Kelime Çiftini bulup duvardaki deniz manzarası tablosunun üzerine sürükleyin. Daha sonra
