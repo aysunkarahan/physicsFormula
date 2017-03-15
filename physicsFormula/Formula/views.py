@@ -24,13 +24,11 @@ def index(request):
 
 
 def detail(request, seviye_id):
-
     try:
-
         seviye = get_object_or_404(Seviye, pk=seviye_id)
         meviye = seviye.kelime_set.all
-        n = random.randint(1,1) # returns a random integer
-        random_kelime = random.randrange(1, 10, 2) # returns a random integer
+        n = random.randrange(1,25) # returns a random integer
+        random_kelime = random.randrange(1, 25) # returns a random integer
     except Seviye.DoesNotExist:
         raise Http404("Album bulunamadı")
 

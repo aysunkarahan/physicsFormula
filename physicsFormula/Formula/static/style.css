@@ -87,12 +87,9 @@
   cursor: pointer;
 }
 .ufak {
-  float:left;
-  border:1px solid red;
+  position: absolute;
   padding:10px;
-  margin:10px;
-  border: 1px solid #000;
-  background-color: #f3eef5;
+  top: 80px;
   opacity: 1;
   -webkit-perspective: 1554px;
   perspective: 1554px;
@@ -105,12 +102,11 @@
   transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
   direction: ltr;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
-  color: #3a040f;
-  font-size: 30px;
+  color: #3a130f;
+  font-size: 20px;
   font-style: normal;
   font-weight: 800;
   text-align: center;
-  text-transform: uppercase;
   text-shadow: 0 -1px 0 #000;
   cursor: pointer;
 }
@@ -151,14 +147,14 @@
 }
 .holder {
   position: static;
-  background: url("{% static 'sahneler/kirmizi-koltuk.jpg' %}") center/100% no-repeat;
+  background: url("sahneler/kirmizi-koltuk.jpg") center/100% no-repeat;
   margin: 87px 24px 152px 26px;
   padding-right: 10px;
   padding-bottom: 460px;
   padding-left: 33px;
 }
 .dropzone {
-  background: url("{% static 'sahneler/iri.jpg' %}") center/100% no-repeat;
+  background: url("sahneler/iri.jpg") center/100% no-repeat;
   border-style: groove;
   border-color: black;
   width: 300px;
@@ -245,6 +241,15 @@
        font-size: 50px;
        font-weight: 800;
      }
+     .togletext:hover {
+       text-decoration: none;
+       margin-right: 11px;
+       padding: 20px 0px 20px 60px;
+       font-family: Tahoma, Verdana, Segoe, sans-serif;
+       color: #FF6666;
+       font-size: 50px;
+       font-weight: 800;
+     }
 
      .icon {
        color: #b69696;
@@ -257,26 +262,42 @@
      div.dropdown li:hover > ul {
        display: block;
      }
-     :link:hover {
- text-decoration:none;
- margin-right: 11px;
- padding: 20px 0px 20px 60px;
- font-family: Tahoma, Verdana, Segoe, sans-serif;
- color: #FF33CC;
- font-size: 50px;
- font-weight: 800;
- }
- a:hover {
-text-decoration:none;
-margin-right: 11px;
-padding: 20px 0px 20px 60px;
-font-family: Tahoma, Verdana, Segoe, sans-serif;
-color: 	#FF0080;
-font-size: 50px;
-font-weight: 800;
-}
+
+
 
 .foo:hover { background: gold; }
+p {
+  margin-right: 20px;
+  margin-left: 40px
+  padding-right: 113px;
+  color: #e09494;
+  font-size: 25px;
+
+}
+.btn {
+  background: #f2f2f2;
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #dedede);
+  background-image: -moz-linear-gradient(top, #f2f2f2, #dedede);
+  background-image: -ms-linear-gradient(top, #f2f2f2, #dedede);
+  background-image: -o-linear-gradient(top, #f2f2f2, #dedede);
+  background-image: linear-gradient(to bottom, #f2f2f2, #dedede);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #bf0d3a;
+  font-size: 28px;
+  padding: 10px 20px 10px 20px;
+  border: solid #d6497d 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #d9cae6;
+  text-decoration: none;
+}
+
+
 @media (max-width: 479px) {
   .ana-div {
     margin-right: 1px;

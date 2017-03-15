@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
     <script src="{% static 'js/interact.js' %}"></script>
 </head>
 <body class="body">
@@ -17,7 +16,6 @@
   </div>
   <div class="container w-container">
     <div class="divim">
-
       <div class="dropdown">
   <ul>
     <li>
@@ -26,16 +24,14 @@
             <li>
               <ul>
                 {% for album in seviyeler %}
-              <li><a class="togletext w-dropdown-link"  href="/Formula/{{ album.id }}/">{{ album.ad}}</a></li>
+              <li><a class="togletext"  href="/Formula/{{ album.id }}/">{{ album.ad}}</a></li>
               {% endfor %}
-
               </ul>
             </li>
           </ul>
     </li>
   </ul>
 </div>
-
     </div>
   </div>
 </body>

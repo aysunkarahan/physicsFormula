@@ -4,94 +4,16 @@
     <meta charset="UTF-8">
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
-
-        <style>
-        .holder {
-          position: static;
-          background: url("{% static 'sahneler/kirmizi-koltuk.jpg' %}") center/100% no-repeat;
-          margin: 87px 24px 152px 26px;
-          padding-right: 10px;
-          padding-bottom: 460px;
-          padding-left: 33px;
-        }
-        .dropzone {
-          background: url("{% static 'sahneler/iri.jpg' %}") center/100% no-repeat;
-          border-style: groove;
-          border-color: black;
-          width: 300px;
-          left: 15px;
-          top: 56px;
-          right: 0px;
-          bottom: 0px;
-          padding-top: 165px;
-          padding-bottom: 49px;
-          position: static;
-        }
-
-        .draggable {
-          float:left;
-          border:1px solid red;
-          padding:10px;
-          margin:10px;
-          border: 1px solid #000;
-          background-color: #f3eef5;
-          opacity: 1;
-          -webkit-perspective: 1554px;
-          perspective: 1554px;
-          -webkit-perspective-origin: 5000% 50%;
-          perspective-origin: 5000% 50%;
-          -webkit-transform: translate(0px, 0px);
-          -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-          -webkit-transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
-          transition: opacity 1217ms cubic-bezier(.755, .05, .855, .06);
-          direction: ltr;
-          font-family: Tahoma, Verdana, Segoe, sans-serif;
-          color: #3a040f;
-          font-size: 30px;
-          font-style: normal;
-          font-weight: 800;
-          text-align: center;
-          text-transform: uppercase;
-          text-shadow: 0 -1px 0 #000;
-          cursor: pointer;
-        }
-
-        .drop-active {
-          border-color: #aaa;
-
-        }
-
-        .drop-target {
-          background-color: #000;
-          color: #FFF;
-          border-color: #fff;
-          border-style: solid;
-        }
-        .democlass {
-          float:left;
-          padding:10px;
-          margin:10px;
-          top: 50px;
-          font-family: Tahoma, Verdana, Segoe, sans-serif;
-          color: #0000FF;
-          font-size: 30px;
-          font-style: normal;
-          font-weight: 800;
-          text-align: center;
-          text-transform: uppercase;
-          text-shadow: 0 -1px 0 #000;
-             }
-        </style>
+    <script src={% static 'js/jquery-3.1.1.min.js' %}></script>
 </head>
 <body class="body">
-  <script type="text/javascript">
-
-  </script>
   <div class="nav">
     <h1 class="baslik">Fotografik Kelime Ezberleme</h1>
+    <a class="btn" type="button" href="/Formula/">Anasayfa</a>
+    <input class="btn" type="button" value="Kelimeleri Yenile" onClick="window.location.reload(false)"/>
   </div>
-
+  <p>Doğru Kelime Çiftini bulup duvardaki deniz manzarası tablosunun üzerine sürükleyin. Daha sonra
+  tüm resme bir kez daha bakın ve sonuç olarak bu kelimeleri hatırlama ihtimaliniz oldukça yüksek:) </p>
         {% for kelime in meviye %}
         {% if kelime.id == n %}
         <div id="yes-drop" class="draggable">{{ kelime.anlami}}</div>
