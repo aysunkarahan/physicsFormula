@@ -2,6 +2,7 @@
   margin: auto;
   background-color: #064444;
   text-align: center;
+  overflow:-moz-scrollbars-vertical; overflow-x:hidden; overflow:-moz-scrollbars-vertical; overflow-y:hidden;
 }
 
 .baslik {
@@ -146,20 +147,27 @@
   font-weight: 800;
 }
 .holder {
+  border-style: groove;
+  border-color: #ecc6c6;
+  border-width:thick;
   position: static;
-  background: url("sahneler/kirmizi-koltuk.jpg") center/100% no-repeat;
-  margin: 87px 24px 152px 26px;
-  padding-right: 10px;
-  padding-bottom: 460px;
-  padding-left: 33px;
+  background-color: #ffffff;
+  background: url("sahneler/kirmizi-koltuk.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: auto;
+  width: 70%;
+  height: 600px;
 }
 .dropzone {
-  background: url("sahneler/iri.jpg") center/100% no-repeat;
+  background: url("sahneler/iri.jpg") no-repeat;
   border-style: groove;
   border-color: black;
-  width: 300px;
+  width: 30%;
   left: 15px;
-  top: 56px;
+  margin-top: 10%;
   right: 0px;
   bottom: 0px;
   padding-top: 165px;
@@ -251,6 +259,16 @@
        font-weight: 800;
      }
 
+     .togletext:active {
+       text-decoration: none;
+       margin-right: 11px;
+       padding: 20px 0px 20px 60px;
+       font-family: Tahoma, Verdana, Segoe, sans-serif;
+       color: #FF6666;
+       font-size: 50px;
+       font-weight: 800;
+     }
+
      .icon {
        color: #b69696;
        font-size: 50px;
@@ -288,7 +306,7 @@ p {
   color: #bf0d3a;
   font-size: 28px;
   padding: 10px 20px 10px 20px;
-  border: solid #d6497d 20px;
+
   text-decoration: none;
 }
 
