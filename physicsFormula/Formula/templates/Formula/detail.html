@@ -11,18 +11,31 @@
   //butona basıldıgında
   $(document).ready(function() {
    $('#vtn').click(function() {      //bacground resmini değiştir
-     $('.holder').css('background',  'url("../static/sahneler/iri.jpg") no-repeat scroll left top transparent');    //tekrar basıldığında
-   }, function() {
-     //backgroundunu eski resimle değiştir
-     $('.holder').css('background',  'url("../static/sahneler/kirmizi-koltuk.jpg") no-repeat scroll left top transparent');    }) }) </script>
+     function bg() {
+
+      var imgCount = 15;
+      var dir = 'http://aysun.pythonanywhere.com/static/sahneler/';
+      // I changed your random generator
+      var randomCount = (Math.floor(Math.random() * imgCount));
+      // I changed your array to the literal notation. The literal notation is preferred.
+      var images = ['yilan.jpg','taslar.jpg','hayvan.jpg','tiren.jpg', 'astronot_3.jpg','igle.jpg','astronot.jpg','kirmizi-koltuk.jpg', 'American.jpg','ataturk.jpg', 'einstein-.jpg','mona.jpg', 'manzara.jpg', 'ucurtma.jpg'];
+      // I changed this section to just define the style attribute the best way I know how.
+      document.getElementById('holder').setAttribute("style", "background-image: url(" + dir + images[randomCount] + ");background-repeat: no-repeat; cover;background-size: cover;");
+   }
+   // Don't forget to run the function instead of just defining it.
+   bg();}) })
+
+   </script>
   <div class="nav">
     <h1 class="baslik">Fotografik Kelime Ezberleme</h1>
     <a class="btn" type="button" href="/Formula/">Anasayfa</a>
-    <input id="vtn" class="btn" type="button" value="Sahneyi Kaldır"/>
+    <input id="vtn" class="btn" type="button" value="Sahneyi Değiştir"/>
     <input class="btn" type="button" value="Kelimeleri Yenile" onClick="window.location.reload(false)"/>
   </div>
   <p>Doğru Kelime Çiftini bulup duvardaki deniz manzarası tablosunun üzerine sürükleyin. Daha sonra
   tüm resme bir kez daha bakın ve sonuç olarak bu kelimeleri hatırlama ihtimaliniz oldukça yüksek:) </p>
+
+
         {% for kelime in meviye %}
         {% if kelime.id == n %}
         <div id="yes-drop" class="draggable">{{ kelime.anlami}}</div>
@@ -32,11 +45,13 @@
 
         {% for seviye in meviye %}
         {% if seviye.id == random_kelime %}
-        <div id="no-drop" class="draggable">{{ seviye.anlami}}</div>
-        <div id="no-drop" class="draggable">{{ seviye.kelime_adi}}</div>
+        <div id="3" class="draggable">{{ seviye.anlami}}</div>
+        <div id="4" class="draggable">{{ seviye.kelime_adi}}</div>
         {% endif %}
         {% endfor %}
-          <div class="holder">
+
+
+          <div id="holder" class="holder">
               <div id="dropzone" class="dropzone"></div>
     </div>
 
@@ -78,7 +93,8 @@ interact('.draggable')
 interact('.dropzone').dropzone({
   // Require a 50% element overlap for a drop to be possible
   overlap: 0.50,
- accept: '#yes-drop',
+  accept: '#yes-drop',
+
   // listen for drop related events:
 
   ondropactivate: function (event) {
